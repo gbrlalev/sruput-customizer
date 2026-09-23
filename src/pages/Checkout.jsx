@@ -14,29 +14,30 @@ function Checkout() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
     const orderData = {
       customer: { name, phone, notes },
       items: cartItems,
       total,
       orderId: crypto.randomUUID().slice(0, 8).toUpperCase(),
     }
-
     clearCart()
     navigate('/order-summary', { state: orderData })
   }
 
   if (cartItems.length === 0) {
     return (
-      <div className="p-6 text-center">
-        <h1 className="text-xl font-semibold">Your cart is empty</h1>
+      <div className="p-6 py-24 text-center">
+        <h1 className="font-display text-2xl">Your cart is empty</h1>
       </div>
     )
   }
 
+  const inputClass =
+    'w-full border border-ink/20 rounded px-3 py-2 bg-cream focus:border-coffee focus:outline-none transition-colors'
+
   return (
     <div className="p-6 max-w-md mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Checkout</h1>
+      <h1 className="font-display text-3xl mb-6">Checkout</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
           <label className="block text-sm font-medium mb-1">Name</label>
@@ -45,7 +46,7 @@ function Checkout() {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full border rounded px-3 py-2"
+            className={inputClass}
           />
         </div>
         <div>
@@ -55,7 +56,7 @@ function Checkout() {
             required
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="w-full border rounded px-3 py-2"
+            className={inputClass}
           />
         </div>
         <div>
@@ -63,13 +64,13 @@ function Checkout() {
           <textarea
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
-            className="w-full border rounded px-3 py-2"
+            className={inputClass}
             rows={3}
           />
         </div>
         <button
           type="submit"
-          className="bg-black text-white py-3 rounded-lg font-medium"
+          className="bg-coffee text-cream py-3 rounded-lg font-medium hover:bg-ink transition-colors"
         >
           Place Order
         </button>

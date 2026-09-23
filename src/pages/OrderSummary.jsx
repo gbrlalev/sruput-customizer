@@ -20,20 +20,20 @@ function OrderSummary() {
 
   return (
     <div className="p-6 max-w-md mx-auto text-center">
-      <h1 className="text-2xl font-bold mb-2">Order Placed!</h1>
-      <p className="text-gray-500 mb-6">Order ID: {orderId}</p>
+      <h1 className="font-display text-3xl mb-2">Order Placed!</h1>
+      <p className="text-sage font-medium mb-6">Order ID: {orderId}</p>
 
-      <div className="text-left border rounded-lg p-4 mb-4">
+      <div className="text-left border border-ink/10 rounded-lg p-4 mb-4">
         <p className="font-semibold mb-2">Customer</p>
-        <p>{customer.name}</p>
-        <p>{customer.phone}</p>
-        {customer.notes && <p className="text-gray-500 mt-1">Note: {customer.notes}</p>}
+        <p className="text-ink/70">{customer.name}</p>
+        <p className="text-ink/70">{customer.phone}</p>
+        {customer.notes && <p className="text-ink/50 mt-1">Note: {customer.notes}</p>}
       </div>
 
-      <div className="text-left border rounded-lg p-4 mb-4">
+      <div className="text-left border border-ink/10 rounded-lg p-4 mb-4">
         <p className="font-semibold mb-2">Items</p>
         {items.map((item) => (
-          <div key={item.cartItemId} className="flex justify-between text-sm mb-1">
+          <div key={item.cartItemId} className="flex justify-between text-sm mb-1 text-ink/70">
             <span>
               {item.name} ({item.size.label}) x{item.quantity}
             </span>
@@ -42,9 +42,9 @@ function OrderSummary() {
         ))}
       </div>
 
-      <p className="text-xl font-bold mb-6">Total: {formatRupiah(total)}</p>
+      <p className="font-display text-2xl mb-6">Total: {formatRupiah(total)}</p>
 
-      <Link to="/" className="text-blue-600 underline">
+      <Link to="/" className="text-coffee underline">
         Back to Menu
       </Link>
     </div>

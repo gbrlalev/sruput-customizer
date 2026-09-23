@@ -7,7 +7,7 @@ function ProductCard({ product }) {
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-48 object-cover"
+          className="w-full h-100 object-cover"
         />
         <div className="p-4">
           <span className="text-xs text-sage font-medium">{product.category}</span>

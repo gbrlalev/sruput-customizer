@@ -21,8 +21,8 @@ const faqs = [
 
 function FAQ() {
   return (
-    <div className="p-6 max-w-xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Frequently Asked Questions</h1>
+    <div className="p-6 max-w-xl mx-auto py-16">
+      <h1 className="font-display text-3xl mb-6">Frequently Asked Questions</h1>
       <div>
         {faqs.map((faq, index) => (
           <Accordion key={index} question={faq.question} answer={faq.answer} />

@@ -4,8 +4,9 @@
     "name": "Sruput Latte",
     "category": "coffee",
     "basePrice": 22000,
-    "image": "https://placehold.co/400x400?text=Kopi+Senja",
+    "image": "/images/Sruput-Latte.png",
     "description": "Smooth espresso blended with creamy steamed milk.",
+    "ingredients": ["Espresso", "Steamed Milk", "Foam"],
     "customizations": {
       "sizes": [
         { "label": "Regular", "priceModifier": 0 },
@@ -25,8 +26,9 @@
     "name": "Brown Sugar Latte",
     "category": "coffee",
     "basePrice": 24000,
-    "image": "https://placehold.co/400x400?text=Brown+Sugar+Latte",
+    "image": "/images/Brown-Sugar-Latte.png",
     "description": "Espresso and fresh milk with a rich brown sugar sweetness.",
+    "ingredients": ["Espresso", "Fresh Milk", "Brown Sugar Syrup"],
     "customizations": {
       "sizes": [
         { "label": "Regular", "priceModifier": 0 },
@@ -46,8 +48,9 @@
     "name": "Caramel Macchiato",
     "category": "coffee",
     "basePrice": 26000,
-    "image": "https://placehold.co/400x400?text=Caramel+Macchiato",
+    "image": "/images/Caramel-Macchiato.png",
     "description": "Espresso, creamy milk, and a touch of caramel.",
+    "ingredients": ["Espresso", "Steamed Milk", "Caramel Syrup"],
     "customizations": {
       "sizes": [
         { "label": "Regular", "priceModifier": 0 },
@@ -67,8 +70,9 @@
     "name": "Matcha Cloud",
     "category": "non-coffee",
     "basePrice": 25000,
-    "image": "https://placehold.co/400x400?text=Matcha+Cloud",
+    "image": "/images/Matcha-Cloud.png",
     "description": "Earthy matcha with smooth, creamy milk.",
+    "ingredients": ["Matcha Powder", "Steamed Milk", "Foam"],
     "customizations": {
       "sizes": [
         { "label": "Regular", "priceModifier": 0 },
@@ -88,8 +92,9 @@
     "name": "Peach Tea",
     "category": "tea",
     "basePrice": 20000,
-    "image": "https://placehold.co/400x400?text=Peach+Tea",
+    "image": "/images/Peach-Tea.png",
     "description": "Refreshing black tea infused with sweet peach flavor.",
+    "ingredients": ["Black Tea", "Peach Syrup", "Ice"],
     "customizations": {
       "sizes": [
         { "label": "Regular", "priceModifier": 0 },

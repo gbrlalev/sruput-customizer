@@ -17,7 +17,7 @@ function ProductDetail() {
     return (
       <div className="p-6 text-center">
         <h1 className="text-xl font-semibold">Product not found</h1>
-        <p className="text-gray-500">The item you're looking for doesn't exist.</p>
+        <p className="text-ink/60">The item you're looking for doesn't exist.</p>
       </div>
     )
   }
@@ -56,102 +56,118 @@ function ProductDetail() {
     })
   }
 
+  const selectClass = (isSelected) =>
+    `px-3 py-1.5 rounded border transition-colors ${
+      isSelected
+        ? 'bg-coffee text-cream border-coffee'
+        : 'bg-cream text-ink border-ink/20 hover:border-coffee'
+    }`
+
   return (
-    <div className="p-6 max-w-2xl mx-auto">
-      <img
-        src={product.image}
-        alt={product.name}
-        className="w-full h-64 object-cover rounded-lg mb-4"
-      />
-      <span className="text-xs uppercase text-gray-500">{product.category}</span>
-      <h1 className="text-2xl font-bold">{product.name}</h1>
-      <p className="text-gray-600 mb-4">{product.description}</p>
+    <div className="p-6 max-w-5xl mx-auto flex flex-col md:flex-row gap-10">
+      {/* Left: image + ingredients */}
+      <div className="w-full md:w-1/2">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="w-full aspect-square object-cover rounded-lg sticky top-6"
+        />
 
-      {/* Size */}
-      <div className="mb-4">
-        <h3 className="font-semibold mb-2">Size</h3>
-        <div className="flex gap-2">
-          {product.customizations.sizes.map((size) => (
-            <button
-              key={size.label}
-              onClick={() => setSelectedSize(size)}
-              className={`px-3 py-1 rounded border ${
-                selectedSize.label === size.label
-                  ? 'bg-black text-white'
-                  : 'bg-white text-black'
-              }`}
-            >
-              {size.label} {size.priceModifier > 0 && `+${formatRupiah(size.priceModifier)}`}
-            </button>
-          ))}
-        </div>
+        {product.ingredients && (
+          <div className="mt-6">
+            <h3 className="font-semibold mb-2">Ingredients</h3>
+            <ul className="flex flex-wrap gap-2">
+              {product.ingredients.map((item) => (
+                <li
+                  key={item}
+                  className="text-sm text-ink/70 bg-sage/10 border border-sage/30 rounded-full px-3 py-1"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
 
-      {/* Sweetness */}
-      <div className="mb-4">
-        <h3 className="font-semibold mb-2">Sweetness</h3>
-        <div className="flex gap-2 flex-wrap">
-          {product.customizations.sweetness.map((level) => (
-            <button
-              key={level}
-              onClick={() => setSelectedSweetness(level)}
-              className={`px-3 py-1 rounded border ${
-                selectedSweetness === level ? 'bg-black text-white' : 'bg-white text-black'
-              }`}
-            >
-              {level}
-            </button>
-          ))}
-        </div>
-      </div>
+      {/* Right: content */}
+      <div className="w-full md:w-1/2">
+        <span className="text-xs text-sage font-medium">{product.category}</span>
+        <h1 className="font-display text-3xl mt-1">{product.name}</h1>
+        <p className="text-ink/60 mt-2 mb-6">{product.description}</p>
 
-      {/* Ice Level */}
-      <div className="mb-4">
-        <h3 className="font-semibold mb-2">Ice Level</h3>
-        <div className="flex gap-2 flex-wrap">
-          {product.customizations.iceLevel.map((level) => (
-            <button
-              key={level}
-              onClick={() => setSelectedIce(level)}
-              className={`px-3 py-1 rounded border ${
-                selectedIce === level ? 'bg-black text-white' : 'bg-white text-black'
-              }`}
-            >
-              {level}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Toppings */}
-      <div className="mb-6">
-        <h3 className="font-semibold mb-2">Toppings</h3>
-        <div className="flex gap-2 flex-wrap">
-          {product.customizations.toppings.map((topping) => {
-            const isSelected = selectedToppings.find((t) => t.label === topping.label)
-            return (
+        <div className="mb-5">
+          <h3 className="font-semibold mb-2">Size</h3>
+          <div className="flex gap-2">
+            {product.customizations.sizes.map((size) => (
               <button
-                key={topping.label}
-                onClick={() => toggleTopping(topping)}
-                className={`px-3 py-1 rounded border ${
-                  isSelected ? 'bg-black text-white' : 'bg-white text-black'
-                }`}
+                key={size.label}
+                onClick={() => setSelectedSize(size)}
+                className={selectClass(selectedSize.label === size.label)}
               >
-                {topping.label} +{formatRupiah(topping.price)}
+                {size.label} {size.priceModifier > 0 && `+${formatRupiah(size.priceModifier)}`}
               </button>
-            )
-          })}
+            ))}
+          </div>
         </div>
+
+        <div className="mb-5">
+          <h3 className="font-semibold mb-2">Sweetness</h3>
+          <div className="flex gap-2 flex-wrap">
+            {product.customizations.sweetness.map((level) => (
+              <button
+                key={level}
+                onClick={() => setSelectedSweetness(level)}
+                className={selectClass(selectedSweetness === level)}
+              >
+                {level}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="mb-5">
+          <h3 className="font-semibold mb-2">Ice Level</h3>
+          <div className="flex gap-2 flex-wrap">
+            {product.customizations.iceLevel.map((level) => (
+              <button
+                key={level}
+                onClick={() => setSelectedIce(level)}
+                className={selectClass(selectedIce === level)}
+              >
+                {level}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="mb-6">
+          <h3 className="font-semibold mb-2">Toppings</h3>
+          <div className="flex gap-2 flex-wrap">
+            {product.customizations.toppings.map((topping) => {
+              const isSelected = selectedToppings.find((t) => t.label === topping.label)
+              return (
+                <button
+                  key={topping.label}
+                  onClick={() => toggleTopping(topping)}
+                  className={selectClass(isSelected)}
+                >
+                  {topping.label} +{formatRupiah(topping.price)}
+                </button>
+              )
+            })}
+          </div>
+        </div>
+
+        <p className="font-display text-2xl mb-4">Total: {formatRupiah(totalPrice)}</p>
+
+        <button
+          onClick={handleAddToCart}
+          className="w-full bg-coffee text-cream py-3 rounded-lg font-medium hover:bg-ink transition-colors"
+        >
+          Add to Cart
+        </button>
       </div>
-
-      <p className="text-xl font-bold">Total: {formatRupiah(totalPrice)}</p>
-
-      <button
-        onClick={handleAddToCart}
-        className="mt-4 w-full bg-black text-white py-3 rounded-lg font-medium"
-      >
-        Add to Cart
-      </button>
     </div>
   )
 }
