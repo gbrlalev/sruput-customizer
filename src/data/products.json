@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "name": "Sruput Latte",
+    "category": "coffee",
+    "basePrice": 22000,
+    "image": "https://placehold.co/400x400?text=Kopi+Senja",
+    "description": "Smooth espresso blended with creamy steamed milk.",
+    "customizations": {
+      "sizes": [
+        { "label": "Regular", "priceModifier": 0 },
+        { "label": "Large", "priceModifier": 5000 }
+      ],
+      "sweetness": ["0%", "25%", "50%", "75%", "100%"],
+      "iceLevel": ["Normal", "Less Ice", "No Ice"],
+      "toppings": [
+        { "label": "Caramel Syrup", "price": 3000 },
+        { "label": "Vanilla Syrup", "price": 3000 },
+        { "label": "Extra Espresso", "price": 3500 }
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "name": "Brown Sugar Latte",
+    "category": "coffee",
+    "basePrice": 24000,
+    "image": "https://placehold.co/400x400?text=Brown+Sugar+Latte",
+    "description": "Espresso and fresh milk with a rich brown sugar sweetness.",
+    "customizations": {
+      "sizes": [
+        { "label": "Regular", "priceModifier": 0 },
+        { "label": "Large", "priceModifier": 5000 }
+      ],
+      "sweetness": ["0%", "25%", "50%", "75%", "100%"],
+      "iceLevel": ["Normal", "Less Ice", "No Ice"],
+      "toppings": [
+        { "label": "Boba", "price": 3000 },
+        { "label": "Cream Foam", "price": 4000 },
+        { "label": "Extra Brown Sugar", "price": 3000 }
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "name": "Caramel Macchiato",
+    "category": "coffee",
+    "basePrice": 26000,
+    "image": "https://placehold.co/400x400?text=Caramel+Macchiato",
+    "description": "Espresso, creamy milk, and a touch of caramel.",
+    "customizations": {
+      "sizes": [
+        { "label": "Regular", "priceModifier": 0 },
+        { "label": "Large", "priceModifier": 5000 }
+      ],
+      "sweetness": ["0%", "25%", "50%", "75%", "100%"],
+      "iceLevel": ["Normal", "Less Ice", "No Ice"],
+      "toppings": [
+        { "label": "Caramel Drizzle", "price": 3000 },
+        { "label": "Vanilla Syrup", "price": 3000 },
+        { "label": "Extra Espresso", "price": 3500 }
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "name": "Matcha Cloud",
+    "category": "non-coffee",
+    "basePrice": 25000,
+    "image": "https://placehold.co/400x400?text=Matcha+Cloud",
+    "description": "Earthy matcha with smooth, creamy milk.",
+    "customizations": {
+      "sizes": [
+        { "label": "Regular", "priceModifier": 0 },
+        { "label": "Large", "priceModifier": 5000 }
+      ],
+      "sweetness": ["0%", "25%", "50%", "75%", "100%"],
+      "iceLevel": ["Normal", "Less Ice", "No Ice"],
+      "toppings": [
+        { "label": "Brown Sugar Jelly", "price": 3000 },
+        { "label": "Cream Foam", "price": 4000 },
+        { "label": "Matcha Cream", "price": 5000 }
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "name": "Peach Tea",
+    "category": "tea",
+    "basePrice": 20000,
+    "image": "https://placehold.co/400x400?text=Peach+Tea",
+    "description": "Refreshing black tea infused with sweet peach flavor.",
+    "customizations": {
+      "sizes": [
+        { "label": "Regular", "priceModifier": 0 },
+        { "label": "Large", "priceModifier": 4000 }
+      ],
+      "sweetness": ["0%", "25%", "50%", "75%", "100%"],
+      "iceLevel": ["Normal", "Less Ice", "No Ice"],
+      "toppings": [
+        { "label": "Peach Jelly", "price": 3000 },
+        { "label": "Lychee Jelly", "price": 3000 },
+        { "label": "Extra Peach", "price": 3000 }
+      ]
+    }
+  }
+]
