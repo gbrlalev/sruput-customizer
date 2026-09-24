@@ -7,6 +7,7 @@
     "image": "/images/Sruput-Latte.png",
     "description": "Smooth espresso blended with creamy steamed milk.",
     "ingredients": ["Espresso", "Steamed Milk", "Foam"],
+    "isBestSeller": true,
     "customizations": {
       "sizes": [
         { "label": "Regular", "priceModifier": 0 },
@@ -73,6 +74,7 @@
     "image": "/images/Matcha-Cloud.png",
     "description": "Earthy matcha with smooth, creamy milk.",
     "ingredients": ["Matcha Powder", "Steamed Milk", "Foam"],
+    "isBestSeller": true,
     "customizations": {
       "sizes": [
         { "label": "Regular", "priceModifier": 0 },
