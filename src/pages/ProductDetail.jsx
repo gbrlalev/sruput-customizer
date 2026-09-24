@@ -70,7 +70,7 @@ function ProductDetail() {
         <img
           src={product.image}
           alt={product.name}
-          className="w-full aspect-square object-cover rounded-lg sticky top-6"
+          className="w-full aspect-square object-cover rounded-lg"
         />
 
         {product.ingredients && (

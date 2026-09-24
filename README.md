@@ -1,16 +1,75 @@
-# React + Vite
+# Sruput — Customizable Beverage Ordering App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A frontend e-commerce showcase for a fictional beverage brand, where users can browse a menu, fully customize each drink (size, sweetness level, ice level, and toppings), and see the total price update in real time before adding it to their cart.
 
-Currently, two official plugins are available:
+Built as a portfolio project to practice component-based architecture, state management, and derived state calculation in React.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Live demo:** https://sruput-order.netlify.app/
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- Browse a menu of drinks with category tags and starting price
+- Full drink customization (size, sweetness, ice level, multiple toppings) with real-time price calculation
+- Cart with quantity adjustment and item removal, supporting multiple customized variants of the same drink
+- Checkout form with order summary confirmation
+- FAQ page with expandable accordion
+- Fully responsive layout
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- **React** — component-based UI
+- **Vite** — build tool & dev server
+- **Tailwind CSS** — styling
+- **React Router** — client-side routing
+- **Context API** — global cart state management
+- **JavaScript (ES6+)**
+- Deployed on **Vercel**
+
+## What I Learned / Challenges
+
+- Calculating derived state (total price) from multiple independent selections instead of storing it directly, to avoid state getting out of sync
+- Using Context API to share cart state across pages without prop drilling
+- Handling the string-vs-number type mismatch between React Router's `useParams()` and product IDs in the data
+- Structuring reusable product data (sizes, toppings with price modifiers) to keep pricing logic simple
+
+## Running Locally
+
+```bash
+git clone <repo-url>
+cd sruput
+npm install
+npm run dev
+```
+
+## Project Structure
+
+```
+src/
+  components/
+    layout/       Navbar, Footer
+    product/       ProductCard, ProductGrid
+    cart/          CartItem
+    shared/        Accordion
+  context/
+    CartContext.jsx
+  data/
+    products.json
+  pages/
+    Menu.jsx
+    ProductDetail.jsx
+    Cart.jsx
+    Checkout.jsx
+    OrderSummary.jsx
+    FAQ.jsx
+  App.jsx
+  main.jsx
+```
+
+## Future Improvements
+
+- Search/filter by category
+- Form validation on checkout
+- Wishlist/favorites (localStorage)
+- TypeScript migration
